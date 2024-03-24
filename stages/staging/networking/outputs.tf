@@ -5,15 +5,11 @@ output "vpc_id" {
 
 output "private_subnet_ids" {
   description = "List of IDs of private subnets"
-  value       = module.vpc.private_subnets_ids
+  value       = module.vpc.private_subnets
 }
 
 output "public_subnet_ids" {
   description = "List of IDs of public subnets"
-  value       = module.vpc.public_subnets_ids
+  value       = module.vpc.public_subnets
 }
 
-output "nat_gateway_id" {
-  description = "The ID of the NAT Gateway"
-  value       = module.vpc.nat_gateway_ids[0]
-}
