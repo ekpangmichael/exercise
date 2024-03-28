@@ -35,6 +35,7 @@ module "eks" {
 
       instance_types = ["m7g.medium"]
       capacity_type  = "ON_DEMAND"
+      ami_type       = "AL2_ARM_64" 
     }
   }
 }
