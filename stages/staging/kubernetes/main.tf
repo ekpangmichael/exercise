@@ -27,13 +27,13 @@ module "eks" {
   }
 
   eks_managed_node_groups = {
-    example = {
+    group-1 = {
       min_size     = 1
       max_size     = 10
       desired_size = 1
 
-      instance_types = ["t3.large"]
-      capacity_type  = "SPOT"
+      instance_types = ["m7g.medium"]
+      capacity_type  = "ON_DEMAND"
     }
   }
 }
