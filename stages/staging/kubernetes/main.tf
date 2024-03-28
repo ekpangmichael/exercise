@@ -24,6 +24,7 @@ module "eks" {
 
   eks_managed_node_group_defaults = {
   instance_types = ["m7g.medium", "m7g.large" ]
+  ami_type = "AL2_ARM_64"
   }
 
   eks_managed_node_groups = {
