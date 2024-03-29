@@ -11,5 +11,5 @@ variable "cluster_name" {
 variable "thumbprint" {
   description = "Root CA thumbprint for OIDC"
   type        = string
-  default     = "9e99a48a9960b14926cc7f0398ea5985360b8e99"
+  default     = "E9:7C:02:2B:D7:BD:47:D0:33:53:C8:4A:B2:04:60:33:1F:7F:06:AB"
 }
