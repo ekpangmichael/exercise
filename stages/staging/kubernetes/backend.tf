@@ -1,8 +1,8 @@
 terraform {
   backend "remote" {
-   hoshostname = "app.terraform.io"
+   hostname = "app.terraform.io"
    organization = "interview-org"
-   woworkspaces {
+   workspaces {
      name = "staging-kubernetes"
    }    
   }
