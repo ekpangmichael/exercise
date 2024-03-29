@@ -2,8 +2,8 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 20.0"
 
-  cluster_name    = "staging-cluster"
-  cluster_version = "1.29"
+  cluster_name    = var.cluster_name
+  cluster_version = var.cluster_version
   cluster_endpoint_public_access  = true
   enable_cluster_creator_admin_permissions = true
 
@@ -37,9 +37,9 @@ module "eks" {
       capacity_type  = "ON_DEMAND"
       ami_type       = "AL2_ARM_64" 
       tags = {
-        "k8s.io/cluster-autoscaler/${module.eks.cluster_id}" = "owned"
+        "k8s.io/cluster-autoscaler/${var.cluster_name}"     = "owned"
         "k8s.io/cluster-autoscaler/enabled"                  = "true"
-        "environment"                                        = "staging"
+        "environment"                                        = var.environment
         "managed_by"                                         = "terraform"
       }
     }
