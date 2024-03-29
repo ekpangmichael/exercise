@@ -36,6 +36,13 @@ module "eks" {
       instance_types = ["m7g.medium"]
       capacity_type  = "ON_DEMAND"
       ami_type       = "AL2_ARM_64" 
+      tags = {
+        "k8s.io/cluster-autoscaler/${module.eks.cluster_id}" = "owned"
+        "k8s.io/cluster-autoscaler/enabled"                  = "true"
+        "environment"                                        = "staging"
+        "managed_by"                                         = "terraform"
+      }
     }
   }
 }
+ 
