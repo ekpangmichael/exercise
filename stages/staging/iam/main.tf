@@ -1,5 +1,5 @@
-module "eks_cluster_autoscaler" {
-  source = "../../../modules/eks_cluster_autoscaler"
+module "oidc" {
+  source = "../../../modules/oidc"
   region = "eu-west-1"
   cluster_name = "staging-cluster"
 }
