@@ -1,3 +1,4 @@
+#helm upgrade --install argocd argo/argo-cd -n argocd -f values.yaml    
 redis-ha:
   enabled: false
 
