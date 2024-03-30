@@ -2,4 +2,4 @@
 .terraform*
 *.tfstate
 output.txt
-argocd-setup/
+.DS_Store
