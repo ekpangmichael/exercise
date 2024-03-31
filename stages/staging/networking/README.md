@@ -1,5 +1,3 @@
-# INFRASTRUCTUR
-
 <!-- BEGIN_TF_DOCS -->
 
 
@@ -29,52 +27,4 @@
 | <a name="output_private_subnet_ids"></a> [private\_subnet\_ids](#output\_private\_subnet\_ids) | List of IDs of private subnets |
 | <a name="output_public_subnet_ids"></a> [public\_subnet\_ids](#output\_public\_subnet\_ids) | List of IDs of public subnets |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | The ID of the VPC |
-<!-- END_TF_DOCS -->
-
-<!-- BEGIN_TF_DOCS -->
-
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | n/a |
-
-## Modules
-
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_eks"></a> [eks](#module\_eks) | terraform-aws-modules/eks/aws | ~> 20.0 |
-
-## Resources
-
-| Name | Type |
-|------|------|
-| [tfe_outputs.networking](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/outputs) | data source |
-
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | The name of the EKS cluster | `string` | `"staging-cluster"` | no |
-| <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | Kubernetes version for the EKS cluster | `string` | `"1.29"` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | `"staging"` | no |
-<!-- END_TF_DOCS -->
-
-<!-- BEGIN_TF_DOCS -->
-
-
-## Modules
-
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_eks_cluster_autoscaler"></a> [eks\_cluster\_autoscaler](#module\_eks\_cluster\_autoscaler) | ../../../modules/oidc | n/a |
-
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | The name of the EKS cluster | `string` | `"staging-cluster"` | no |
-| <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | Kubernetes version for the EKS cluster | `string` | `"1.29"` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | `"staging"` | no |
 <!-- END_TF_DOCS -->
