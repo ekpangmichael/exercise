@@ -1,15 +1,26 @@
-# INFRASTRUCTUR
+# Terraform Infrastructure Setup for VPC, EKS, and ArgoCD
+## Overview
+This repository houses the essential Terraform code required for the configuration and deployment of a VPC (Virtual Private Cloud) and an EKS (Elastic Kubernetes Service) cluster on AWS. Additionally, it includes YAML configurations for setting up ArgoCD, a declarative, GitOps continuous delivery tool for Kubernetes.
 
+
+## Terraform Cloud Integration
+This repository is integrated with Terraform Cloud, enabling a Version Control System (VCS) workflow. The process is as follows:
+
+### Pull Request (PR) Workflow:
+ Whenever a pull request is raised, Terraform Cloud automatically initiates a 'plan' operation. 
 <!-- BEGIN_TF_DOCS -->
 
 
-## Modules
+# Module
+The following modules were used
+
+## VPC Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | terraform-aws-modules/vpc/aws | 5.7.0 |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -22,7 +33,7 @@
 | <a name="input_single_nat_gateway"></a> [single\_nat\_gateway](#input\_single\_nat\_gateway) | Flag to use a single NAT Gateway for all private subnets | `bool` | `true` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | <pre>{<br>  "Environment": "staging",<br>  "Terraform": "true"<br>}</pre> | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|
@@ -34,25 +45,25 @@
 <!-- BEGIN_TF_DOCS -->
 
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_tfe"></a> [tfe](#provider\_tfe) | n/a |
 
-## Modules
+## EKS Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_eks"></a> [eks](#module\_eks) | terraform-aws-modules/eks/aws | ~> 20.0 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
 | [tfe_outputs.networking](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/outputs) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -64,13 +75,13 @@
 <!-- BEGIN_TF_DOCS -->
 
 
-## Modules
+### OIDC Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_eks_cluster_autoscaler"></a> [eks\_cluster\_autoscaler](#module\_eks\_cluster\_autoscaler) | ../../../modules/oidc | n/a |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
