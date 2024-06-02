@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
    hostname = "app.terraform.io"
-   organization = "interview-org"
+   organization = "myclinify"
    workspaces {
-     name = "staging-kubernetes"
+     name = "prod-kubernetes"
    }    
   }
 }
