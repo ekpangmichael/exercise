@@ -1,7 +1,7 @@
 variable "cluster_name" {
   description = "The name of the EKS cluster"
   type        = string
-  default     = "staging-cluster"
+  default     = "prod-cluster"
 }
 
 variable "cluster_version" {
@@ -9,8 +9,13 @@ variable "cluster_version" {
   type        = string
   default     = "1.29"
 }
+variable "prod_vpc_id" {
+  description = "Prod vpc ID"
+  type        = string
+  default     = "vpc-00ea8ae5c9d87d48b"
+}
 
 variable "environment" {
     type = string 
-    default = "staging" 
+    default = "production" 
 }

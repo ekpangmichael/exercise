@@ -19,8 +19,8 @@ module "eks" {
     }
   }
 
-  vpc_id     = data.tfe_outputs.networking.nonsensitive_values.vpc_id 
-  subnet_ids = data.tfe_outputs.networking.nonsensitive_values.private_subnet_ids
+  vpc_id     =  var.prod_vpc_id
+  subnet_ids = [ "subnet-0e05f6c5635b5295e", "subnet-0668d6f0554287d00" ]
 
   eks_managed_node_group_defaults = {
   instance_types = ["m7g.medium", "m7g.large" ]
